@@ -1,0 +1,68 @@
+baseurl      = "https://yura7gi14.github.io"
+title        = "My Blog"
+languageCode = "ja"
+defaultContentLanguage = "ja"
+theme        = "hello-friend-ng"
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
+
+  # Subtitle for home
+  homeSubtitle = "作品紹介と技術ブログのサイトです."
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts = false
+
+  # Enable sharing buttons, if you like
+  enableSharingButtons = true
+  
+  # Show a global language switcher in the navigation bar
+  enableGlobalLanguageMenu = true
+
+  # Metadata mostly used in document's head
+  description = "ポートフォリオやブログなどをまとめた個人サイト"
+  keywords = "ポートフォリオ, ブログ, 技術, 開発"
+  images = [""]
+
+[taxonomies]
+    category = "categories"
+    tag      = "tags"
+    series   = "series"
+
+[languages]
+  [languages.ja]
+    title = "My Portfolio"
+    keywords = "ブログ, 技術, 開発"
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+    readOtherPosts = "他の記事も読む"
+
+  [languages.ja.params]
+    subtitle  = "ポートフォリオ + 技術ブログ"
+
+    [languages.ja.params.logo]
+      logoText = "my portfolio"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+
+  # And you can even create generic menu
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/posts"
+  [[menu.main]]
+    identifier  = "makes"
+    name        = "作ったもの"
+    url         = "/works"
+  [[menu.main]]
+    identifier  = "contact"
+    name        = "contact"
+    url         = "/contact"

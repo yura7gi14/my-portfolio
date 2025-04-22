@@ -54,10 +54,11 @@ theme        = "hello-friend-ng"
     # alt = "Your example logo alt text"
 
   # And you can even create generic menu
-  [[menu.main]]
-    identifier = "profile"
-    name       = "Prifile"
-    url        = "/profile"
+[[menu.main]]
+  identifier = "profile"
+  name       = "プロフィール"
+  url        = "/profile/"
+  weight     = 10
 
   [[menu.main]]
     identifier = "blog"

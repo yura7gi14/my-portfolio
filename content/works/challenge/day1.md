@@ -6,6 +6,7 @@ tags: ["Python", "ネットワーク", "ツール"]
 tech: ["Python 3.12", "socket"]
 github: "https://github.com/yura7gi14/100days-of-code/tree/main/day1"
 draft: false
+tags: ["Python", "ネットワーク", "ツール"]
 ---
 
 Python の `socket` モジュールを使って、ホスト名とローカルIPアドレスを表示するツールを作成しました。

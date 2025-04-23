@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Portfolio</title><link>https://yura7gi14.github.io/my-portfolio/</link><description>Recent content on My Portfolio</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Wed, 23 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>お問い合わせ</title><link>https://yura7gi14.github.io/my-portfolio/contact/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/contact/</guid><description>&lt;h2 id="お問い合わせ">お問い合わせ&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Portfolio</title><link>https://yura7gi14.github.io/my-portfolio/</link><description>Recent content on My Portfolio</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Wed, 23 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>#100日チャレンジ day1</title><link>https://yura7gi14.github.io/my-portfolio/blog/day1/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day1/</guid><description>&lt;h1 id="day1-ip情報の表示ツール">Day1 IP情報の表示ツール&lt;/h1>
+&lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
+これはDay1の記事です.&lt;/p>
+&lt;p>使用した言語はPython. versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
+モジュールとしてsocketを使用している.&lt;/p>
+&lt;pre tabindex="0">&lt;code>hostname = socket.gethostname()
+&lt;/code>&lt;/pre>&lt;p>これでホスト名を取得し,&lt;/p>
+&lt;pre tabindex="0">&lt;code>ip_address = socket.gethostbyname(hostname)
+&lt;/code>&lt;/pre>&lt;p>これでIP情報を取得.&lt;/p>
+&lt;p>&lt;code>gethostname&lt;/code>でシステムの標準のホスト名を取得.&lt;br>
+&lt;code>gethostbyname&lt;/code>でインターネットに出るためのルータに接続しているインターフェースのローカルIPアドレスを取得.&lt;/p></description></item><item><title>お問い合わせ</title><link>https://yura7gi14.github.io/my-portfolio/contact/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/contact/</guid><description>&lt;h2 id="お問い合わせ">お問い合わせ&lt;/h2>
 &lt;p>ご意見・ご感想・お仕事のご相談などありましたら、以下からお気軽にご連絡ください。&lt;/p>
 &lt;ul>
 &lt;li>🐦 Twitter: &lt;a href="https://twitter.com/less71__">@less71__&lt;/a>&lt;/li>

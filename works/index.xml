@@ -1,1 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Works on My Portfolio</title><link>https://yura7gi14.github.io/my-portfolio/works/</link><description>Recent content in Works on My Portfolio</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate/><atom:link href="https://yura7gi14.github.io/my-portfolio/works/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on My Portfolio</title><link>https://yura7gi14.github.io/my-portfolio/works/</link><description>Recent content in Projects on My Portfolio</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Wed, 23 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/works/index.xml" rel="self" type="application/rss+xml"/><item><title>Day1 - IP情報の表示ツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day1/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day1/</guid><description>&lt;p>Python の &lt;code>socket&lt;/code> モジュールを使って、ホスト名とローカルIPアドレスを表示するツールを作成しました。&lt;/p>
+&lt;h3 id="使用技術">使用技術&lt;/h3>
+&lt;ul>
+&lt;li>Python 3.12&lt;/li>
+&lt;li>socketモジュール&lt;/li>
+&lt;/ul>
+&lt;h3 id="機能概要">機能概要&lt;/h3>
+&lt;ul>
+&lt;li>ホスト名の取得&lt;/li>
+&lt;li>ローカルIPアドレスの取得&lt;/li>
+&lt;/ul>
+&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
+&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/day1">Day1 - IP情報の表示ツール&lt;/a>&lt;/p></description></item></channel></rss>

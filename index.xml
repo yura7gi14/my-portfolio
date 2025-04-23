@@ -9,7 +9,19 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>ip_address &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>gethostbyname(hostname)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これでIP情報を取得.&lt;/p>
 &lt;p>&lt;code>gethostname&lt;/code>でシステムの標準のホスト名を取得.&lt;br>
-&lt;code>gethostbyname&lt;/code>でインターネットに出るためのルータに接続しているインターフェースのローカルIPアドレスを取得.&lt;/p></description></item><item><title>お問い合わせ</title><link>https://yura7gi14.github.io/my-portfolio/contact/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/contact/</guid><description>&lt;h2 id="お問い合わせ">お問い合わせ&lt;/h2>
+&lt;code>gethostbyname&lt;/code>でインターネットに出るためのルータに接続しているインターフェースのローカルIPアドレスを取得.&lt;/p></description></item><item><title>Day1 - IP情報の表示ツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day1/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day1/</guid><description>&lt;p>Python の &lt;code>socket&lt;/code> モジュールを使って、ホスト名とローカルIPアドレスを表示するツールを作成しました。&lt;/p>
+&lt;h3 id="使用技術">使用技術&lt;/h3>
+&lt;ul>
+&lt;li>Python 3.12&lt;/li>
+&lt;li>socketモジュール&lt;/li>
+&lt;/ul>
+&lt;h3 id="機能概要">機能概要&lt;/h3>
+&lt;ul>
+&lt;li>ホスト名の取得&lt;/li>
+&lt;li>ローカルIPアドレスの取得&lt;/li>
+&lt;/ul>
+&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
+&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/day1">Day1 - IP情報の表示ツール&lt;/a>&lt;/p></description></item><item><title>お問い合わせ</title><link>https://yura7gi14.github.io/my-portfolio/contact/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/contact/</guid><description>&lt;h2 id="お問い合わせ">お問い合わせ&lt;/h2>
 &lt;p>ご意見・ご感想・お仕事のご相談などありましたら、以下からお気軽にご連絡ください。&lt;/p>
 &lt;ul>
 &lt;li>🐦 Twitter: &lt;a href="https://twitter.com/less71__">@less71__&lt;/a>&lt;/li>

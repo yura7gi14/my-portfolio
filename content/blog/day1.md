@@ -12,12 +12,12 @@ tags: ["blog", "#100日チャレンジ"]
 使用した言語はPython. versionは`Python 3.12.3`  
 モジュールとしてsocketを使用している.  
 
-```
+```python
 hostname = socket.gethostname()
 ```
 これでホスト名を取得し, 
 
-```
+```python
 ip_address = socket.gethostbyname(hostname)
 ```
 これでIP情報を取得.

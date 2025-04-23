@@ -37,10 +37,9 @@ theme        = "hello-friend-ng"
 
 [languages]
   [languages.ja]
-    title = "My Portfolio"
-    keywords = "ブログ, 技術, 開発"
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-    readOtherPosts = "他の記事も読む"
+  title = "My Portfolio"
+  keywords = "ブログ, 技術, 開発"
+  copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
   [languages.ja.params]
     subtitle  = "ポートフォリオ + 技術ブログ"
@@ -48,33 +47,29 @@ theme        = "hello-friend-ng"
     [languages.ja.params.logo]
       logoText = "my portfolio"
       logoHomeLink = "/my-portfolio/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
+
+  [[languages.ja.menu.main]]
+    identifier = "1profile"
+    name       = "Profile"
+    url        = "/profile/"
+    weight     = 1
+
+  [[languages.ja.menu.main]]
+    identifier = "2blog"
+    name       = "Blog"
+    url        = "/blog/"
+    weight     = 2
+
+  [[languages.ja.menu.main]]
+    identifier = "3makes"
+    name       = "Projects"
+    url        = "/works/"
+    weight     = 3
+
+  [[languages.ja.menu.main]]
+    identifier = "4contact"
+    name       = "contact"
+    url        = "/contact/"
+    weight     = 4
 
   # And you can even create generic menu
-[[menu.main]]
-  identifier = "1profile"
-  name       = "Profile"
-  url        = "/profile/"
-  weight     = 1
-
-[[menu.main]]
-  identifier = "2blog"
-  name       = "Blog"
-  url        = "/blog/"
-  weight     = 2
-
-[[menu.main]]
-  identifier = "3makes"
-  name       = "Projects"
-  url        = "/works/"
-  weight     = 3
-
-[[menu.main]]
-  identifier = "4contact"
-  name       = "contact"
-  url        = "/contact/"
-  weight     = 4
-

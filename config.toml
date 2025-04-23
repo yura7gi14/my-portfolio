@@ -56,23 +56,24 @@ theme        = "hello-friend-ng"
   # And you can even create generic menu
 [[menu.main]]
   identifier = "profile"
-  name       = "プロフィール"
+  name       = "Profile"
   url        = "/profile/"
   weight     = 1
 
-  [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/blog/"
-    weight     = 2
-  [[menu.main]]
-    identifier  = "makes"
-    name        = "作ったもの"
-    url         = "/works/"
-    weight      = 3
-  [[menu.main]]
-    identifier  = "contact"
-    name        = "contact"
-    url         = "/contact/"
-    weight      = 4
-  
+[[menu.main]]
+  identifier = "blog"
+  name       = "Blog"
+  url        = "/blog/"
+  weight     = 2
+
+[[menu.main]]
+  identifier = "makes"
+  name       = "Projects"
+  url        = "/works/"
+  weight     = 3
+
+[[menu.main]]
+  identifier = "contact"
+  name       = "contact"
+  url        = "/contact/"
+  weight     = 4

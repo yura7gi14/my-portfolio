@@ -47,7 +47,7 @@ theme        = "hello-friend-ng"
 
     [languages.ja.params.logo]
       logoText = "my portfolio"
-      logoHomeLink = "/"
+      logoHomeLink = "/my-portfolio/"
     # or
     #
     # path = "/img/your-example-logo.svg"

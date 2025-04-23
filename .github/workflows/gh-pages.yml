@@ -33,3 +33,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
+    concurrency:
+      group: "pages-deploy"
+      cancel-in-progress: true

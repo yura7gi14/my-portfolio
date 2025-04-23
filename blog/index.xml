@@ -3,10 +3,10 @@
 これはDay1の記事です.&lt;/p>
 &lt;p>使用した言語はPython. versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
 モジュールとしてsocketを使用している.&lt;/p>
-&lt;pre tabindex="0">&lt;code>hostname = socket.gethostname()
-&lt;/code>&lt;/pre>&lt;p>これでホスト名を取得し,&lt;/p>
-&lt;pre tabindex="0">&lt;code>ip_address = socket.gethostbyname(hostname)
-&lt;/code>&lt;/pre>&lt;p>これでIP情報を取得.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>hostname &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>gethostname()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これでホスト名を取得し,&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>ip_address &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>gethostbyname(hostname)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これでIP情報を取得.&lt;/p>
 &lt;p>&lt;code>gethostname&lt;/code>でシステムの標準のホスト名を取得.&lt;br>
 &lt;code>gethostbyname&lt;/code>でインターネットに出るためのルータに接続しているインターフェースのローカルIPアドレスを取得.&lt;/p></description></item><item><title>はじめてのブログ</title><link>https://yura7gi14.github.io/my-portfolio/blog/first-post/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/first-post/</guid><description>&lt;p>こんにちは、これがブログの1本目です。
 いけてるかな&lt;/p></description></item></channel></rss>

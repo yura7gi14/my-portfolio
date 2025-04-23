@@ -2,33 +2,37 @@
 <h1 style="text-align: center; margin: 20px 0;">制作物一覧</h1>
 <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
   {{ range .Pages }}
-    <div style="
-      width: 240px;
-      height: 240px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 12px;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
-      overflow: hidden;
-    ">
-      <div>
-        <div style="font-size: 1rem; font-weight: bold; margin-bottom: 6px;">{{ .Title }}</div>
-        <div style="font-size: 0.85rem; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis;">{{ .Params.description }}</div>
-        <div style="font-size: 0.75rem; color: #555; margin-bottom: 6px;">使用技術: {{ .Params.tech }}</div>
-        <div style="font-size: 0.75rem; color: #888; margin-bottom: 6px;">
-          {{ range .Params.tags }}
-            <span style="display: inline-block; background-color: #f0f0f0; color: #333; padding: 2px 6px; border-radius: 4px; margin: 2px;">#{{ . }}</span>
-          {{ end }}
+    <a href="{{ .RelPermalink }}" style="text-decoration: none;">
+      <div style="
+        width: 240px;
+        height: 240px;
+        box-sizing: border-box;
+        border: 1px solid var(--tertiary);
+        border-radius: 8px;
+        padding: 12px;
+        background-color: rgba(255, 255, 255, 0.05); /* 明るく */
+        color: var(--primary);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 影濃いめ */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        overflow: hidden;
+      ">
+
+        <div>
+          <div style="font-size: 1rem; font-weight: bold; margin-bottom: 6px;">{{ .Title }}</div>
+          <div style="font-size: 0.85rem; margin-bottom: 6px;">{{ .Params.description }}</div>
+          <div style="font-size: 0.75rem; color: var(--secondary); margin-bottom: 6px;">使用技術: {{ .Params.tech }}</div>
+          <div style="font-size: 0.75rem; color: var(--tertiary); margin-bottom: 6px;">
+            {{ range .Params.tags }}
+              <span style="display: inline-block; background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; margin: 2px;">#{{ . }}</span>
+            {{ end }}
+          </div>
         </div>
+        <div style="font-size: 0.85rem; color: var(--link);">詳細を見る</div>
       </div>
-      <a href="{{ .RelPermalink }}" style="font-size: 0.85rem; color: #007acc;">詳細を見る</a>
-    </div>
+    </a>
   {{ end }}
 </div>
 {{ end }}

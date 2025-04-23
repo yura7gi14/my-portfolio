@@ -49,27 +49,28 @@ theme        = "hello-friend-ng"
       logoHomeLink = "/my-portfolio/"
 
   [[languages.ja.menu.main]]
-    identifier = "1profile"
-    name       = "Profile"
-    url        = "/profile/"
-    weight     = 1
+  identifier = "1profile"
+  name       = "Profile"
+  url        = "/profile/"
+  weight     = 1
 
   [[languages.ja.menu.main]]
-    identifier = "2blog"
-    name       = "Blog"
-    url        = "/blog/"
-    weight     = 2
+  identifier = "2blog"
+  name       = "Blog"
+  url        = "/blog/"
+  weight     = 2
 
   [[languages.ja.menu.main]]
-    identifier = "3makes"
-    name       = "Projects"
-    url        = "/works/"
-    weight     = 3
+  identifier = "3makes"
+  name       = "Projects"
+  url        = "/works/"
+  weight     = 3
 
   [[languages.ja.menu.main]]
-    identifier = "4contact"
-    name       = "contact"
-    url        = "/contact/"
-    weight     = 4
+  identifier = "4contact"
+  name       = "Contact"
+  url        = "/contact/"
+  weight     = 4
+
 
   # And you can even create generic menu

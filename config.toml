@@ -63,7 +63,7 @@ theme        = "hello-friend-ng"
   [[menu.main]]
     identifier = "blog"
     name       = "Blog"
-    url        = "/posts/"
+    url        = "/blog/"
   [[menu.main]]
     identifier  = "makes"
     name        = "作ったもの"

@@ -12,6 +12,7 @@ theme        = "hello-friend-ng"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
+  hideFooter = true
 
   # Subtitle for home
   homeSubtitle = "作品紹介と技術ブログのサイトです."

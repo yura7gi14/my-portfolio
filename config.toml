@@ -1,5 +1,5 @@
 baseurl = "https://yura7gi14.github.io/my-portfolio/"
-title        = "My Blog"
+title        = "yuragi.dev"
 languageCode = "ja"
 defaultContentLanguage = "ja"
 theme        = "hello-friend-ng"
@@ -16,7 +16,7 @@ theme        = "hello-friend-ng"
   enableThemeToggle = true
 
   # Subtitle for home
-  homeSubtitle = "作品紹介と技術ブログのサイトです."
+  homeSubtitle = "ネットワークが好きな大学院生の活動記録."
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -28,7 +28,7 @@ theme        = "hello-friend-ng"
   enableGlobalLanguageMenu = true
 
   # Metadata mostly used in document's head
-  description = "ポートフォリオやブログなどをまとめた個人サイト"
+  description = "ネットワークが好きな大学院生の活動記録"
   keywords = "ポートフォリオ, ブログ, 技術, 開発"
   images = [""]
 
@@ -51,15 +51,15 @@ theme        = "hello-friend-ng"
 
 [languages]
   [languages.ja]
-  title = "My Portfolio"
+  title = "yuragi.dev"
   keywords = "ブログ, 技術, 開発"
   copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
   [languages.ja.params]
-    subtitle  = "ポートフォリオ + 技術ブログ"
+    subtitle  = "ネットワークが好きな大学院生の活動記録"
 
     [languages.ja.params.logo]
-      logoText = "my portfolio"
+      logoText = "yuragi.dev"
       logoHomeLink = "/my-portfolio/"
 
   [[languages.ja.menu.main]]

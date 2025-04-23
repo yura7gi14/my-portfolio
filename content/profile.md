@@ -2,7 +2,11 @@
 title: "プロフィール"
 date: 2025-04-23
 draft: false
+layout: single
+type: page
+slug: profile
 ---
+
 
 ## 自己紹介
 

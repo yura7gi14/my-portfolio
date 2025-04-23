@@ -63,13 +63,13 @@ theme        = "hello-friend-ng"
   [[menu.main]]
     identifier = "blog"
     name       = "Blog"
-    url        = "/posts"
+    url        = "/posts/"
   [[menu.main]]
     identifier  = "makes"
     name        = "作ったもの"
-    url         = "/works"
+    url         = "/works/"
   [[menu.main]]
     identifier  = "contact"
     name        = "contact"
-    url         = "/contact"
+    url         = "/contact/"
   

@@ -58,18 +58,21 @@ theme        = "hello-friend-ng"
   identifier = "profile"
   name       = "プロフィール"
   url        = "/profile/"
-  weight     = 10
+  weight     = 1
 
   [[menu.main]]
     identifier = "blog"
     name       = "Blog"
     url        = "/blog/"
+    weight     = 2
   [[menu.main]]
     identifier  = "makes"
     name        = "作ったもの"
     url         = "/works/"
+    weight      = 3
   [[menu.main]]
     identifier  = "contact"
     name        = "contact"
     url         = "/contact/"
+    weight      = 4
   

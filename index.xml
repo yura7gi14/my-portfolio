@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/</link><description>Recent content on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Wed, 23 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>#100日チャレンジ day1</title><link>https://yura7gi14.github.io/my-portfolio/blog/day1/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day1/</guid><description>&lt;h1 id="day1-ip情報の表示ツール">Day1 IP情報の表示ツール&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/</link><description>Recent content on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>#100日チャレンジ day1</title><link>https://yura7gi14.github.io/my-portfolio/blog/day2/</link><pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day2/</guid><description>&lt;h1 id="day2-簡易pingツール">Day2 簡易Pingツール&lt;/h1>
+&lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
+これはDay2の記事です.&lt;br>
+&lt;code>subprocess&lt;/code>を使用して任意の宛先にPingを送るツールを作りました。&lt;/p>
+&lt;p>使用した言語はPython. versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
+使用したのは&lt;code>subprocess&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>target &lt;span style="color:#f92672">=&lt;/span> input()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これで宛先を取得&lt;br>
+(例: google.com, 1.1.1.1)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>response &lt;span style="color:#f92672">=&lt;/span> subprocess&lt;span style="color:#f92672">.&lt;/span>run([&lt;span style="color:#e6db74">&amp;#34;ping&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-c&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span>, target], capture_output&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>, text&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これでpingの送信が行われる&lt;/p>
+&lt;p>&lt;code>subprocess.run&lt;/code>で外部コマンドを呼べる.&lt;br>
+&lt;code>ping&lt;/code>のところでなんのコマンドを実行するのかを定義.&lt;code>-c&lt;/code>などはpingで使われるオプションを指定している.&lt;/p></description></item><item><title>Day2 - 簡易Pingツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day2/</link><pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day2/</guid><description>&lt;p>Python の &lt;code>subprocess&lt;/code> モジュールを使って、任意の宛先にPingを送信するツールを作成しました。&lt;/p>
+&lt;h3 id="使用技術">使用技術&lt;/h3>
+&lt;ul>
+&lt;li>Python 3.12&lt;/li>
+&lt;li>subprcessモジュール&lt;/li>
+&lt;/ul>
+&lt;h3 id="機能概要">機能概要&lt;/h3>
+&lt;ul>
+&lt;li>任意の宛先にPingを送信する&lt;/li>
+&lt;/ul>
+&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
+&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day2">Day2 - 簡易Pingツール&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day1</title><link>https://yura7gi14.github.io/my-portfolio/blog/day1/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day1/</guid><description>&lt;h1 id="day1-ip情報の表示ツール">Day1 IP情報の表示ツール&lt;/h1>
 &lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
 これはDay1の記事です.&lt;br>
 実行環境のホスト名とIPアドレスを表示させるツールを開発しました.&lt;/p>

@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ネットワーク on yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/tags/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/</link><description>Recent content in ネットワーク on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Wed, 23 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/tags/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>Day1 - IP情報の表示ツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day1/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day1/</guid><description>&lt;p>Python の &lt;code>socket&lt;/code> モジュールを使って、ホスト名とローカルIPアドレスを表示するツールを作成しました。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ネットワーク on yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/tags/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/</link><description>Recent content in ネットワーク on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/tags/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>Day2 - 簡易Pingツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day2/</link><pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day2/</guid><description>&lt;p>Python の &lt;code>subprocess&lt;/code> モジュールを使って、任意の宛先にPingを送信するツールを作成しました。&lt;/p>
+&lt;h3 id="使用技術">使用技術&lt;/h3>
+&lt;ul>
+&lt;li>Python 3.12&lt;/li>
+&lt;li>subprcessモジュール&lt;/li>
+&lt;/ul>
+&lt;h3 id="機能概要">機能概要&lt;/h3>
+&lt;ul>
+&lt;li>任意の宛先にPingを送信する&lt;/li>
+&lt;/ul>
+&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
+&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day2">Day2 - 簡易Pingツール&lt;/a>&lt;/p></description></item><item><title>Day1 - IP情報の表示ツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day1/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day1/</guid><description>&lt;p>Python の &lt;code>socket&lt;/code> モジュールを使って、ホスト名とローカルIPアドレスを表示するツールを作成しました。&lt;/p>
 &lt;h3 id="使用技術">使用技術&lt;/h3>
 &lt;ul>
 &lt;li>Python 3.12&lt;/li>

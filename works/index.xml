@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/works/</link><description>Recent content in Projects on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/works/index.xml" rel="self" type="application/rss+xml"/><item><title>Day2 - 簡易Pingツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day2/</link><pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day2/</guid><description>&lt;p>Python の &lt;code>subprocess&lt;/code> モジュールを使って、任意の宛先にPingを送信するツールを作成しました。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/works/</link><description>Recent content in Projects on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Fri, 25 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/works/index.xml" rel="self" type="application/rss+xml"/><item><title>Day3 - 簡易ネットワークスキャナ</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day3/</link><pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day3/</guid><description>&lt;p>Python の &lt;code>subprocess&lt;/code> &lt;code>ipaddress&lt;/code>モジュールを使って、任意の宛先範囲にPingを送信して疎通可能か判断するツールを作成しました。&lt;/p>
+&lt;h3 id="使用技術">使用技術&lt;/h3>
+&lt;ul>
+&lt;li>Python 3.12&lt;/li>
+&lt;li>subprcessモジュール&lt;/li>
+&lt;li>ipaddressモジュール&lt;/li>
+&lt;/ul>
+&lt;h3 id="機能概要">機能概要&lt;/h3>
+&lt;ul>
+&lt;li>任意の宛先範囲にPingを送信して疎通可能か判断するツール&lt;/li>
+&lt;/ul>
+&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
+&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day3">Day2 - 簡易Pingツール&lt;/a>&lt;/p></description></item><item><title>Day2 - 簡易Pingツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day2/</link><pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day2/</guid><description>&lt;p>Python の &lt;code>subprocess&lt;/code> モジュールを使って、任意の宛先にPingを送信するツールを作成しました。&lt;/p>
 &lt;h3 id="使用技術">使用技術&lt;/h3>
 &lt;ul>
 &lt;li>Python 3.12&lt;/li>

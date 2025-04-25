@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/tags/blog/</link><description>Recent content in Blog on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/tags/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>#100日チャレンジ day2</title><link>https://yura7gi14.github.io/my-portfolio/blog/day2/</link><pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day2/</guid><description>&lt;h1 id="day2-簡易pingツール">Day2 簡易Pingツール&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/tags/blog/</link><description>Recent content in Blog on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Fri, 25 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/tags/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>#100日チャレンジ da32</title><link>https://yura7gi14.github.io/my-portfolio/blog/day3/</link><pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day3/</guid><description>&lt;h1 id="day3-簡易ネットワークスキャナ">Day3 簡易ネットワークスキャナ&lt;/h1>
+&lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
+これはDay3の記事です.&lt;br>
+Day2で作ったpingを送信するコードを弄り、複数のIPに対してPingを送信して生きてるIPを判定できるように.&lt;/p>
+&lt;p>使用した言語はPython. versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
+使用したのは&lt;code>subprocess&lt;/code>, &lt;code>ipaddress&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>ip_addr &lt;span style="color:#f92672">=&lt;/span> input(&lt;span style="color:#e6db74">&amp;#34;ip address:&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>net &lt;span style="color:#f92672">=&lt;/span> ipaddress&lt;span style="color:#f92672">.&lt;/span>ip_network(ip_addr)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ips &lt;span style="color:#f92672">=&lt;/span> [str(ip) &lt;span style="color:#66d9ef">for&lt;/span> ip &lt;span style="color:#f92672">in&lt;/span> net&lt;span style="color:#f92672">.&lt;/span>hosts()]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これで送信するIP addressを指定&lt;br>
+宛先のip addressはCLI上で指定可能&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> ip &lt;span style="color:#f92672">in&lt;/span> ips:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>ip&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">にping中...&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> response &lt;span style="color:#f92672">=&lt;/span> subprocess&lt;span style="color:#f92672">.&lt;/span>run(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#e6db74">&amp;#34;ping&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-c&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-W&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span>, ip],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> capture_output&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> text&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> response&lt;span style="color:#f92672">.&lt;/span>returncode &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>ip&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">は生存している&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>ip&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">は応答なし&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これでpingの送信が行われる&lt;br>
+送信されれば&lt;code>生存している&lt;/code>, 送信されなければ&lt;code>応答なし&lt;/code>と表示&lt;/p>
+&lt;p>&lt;code>subprocess.run&lt;/code>で外部コマンドを呼べる.&lt;br>
+&lt;code>ping&lt;/code>のところでなんのコマンドを実行するのかを定義.&lt;code>-c&lt;/code>などはpingで使われるオプションを指定している.&lt;/p></description></item><item><title>#100日チャレンジ day2</title><link>https://yura7gi14.github.io/my-portfolio/blog/day2/</link><pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day2/</guid><description>&lt;h1 id="day2-簡易pingツール">Day2 簡易Pingツール&lt;/h1>
 &lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
 これはDay2の記事です.&lt;br>
 &lt;code>subprocess&lt;/code>を使用して任意の宛先にPingを送るツールを作りました。&lt;/p>

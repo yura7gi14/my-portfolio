@@ -4,7 +4,7 @@ date: 2025-04-24
 description: "任意の宛先にPingを送信するツール"
 tags: ["Python", "ネットワーク", "ツール"]
 tech: ["Python 3.12", "subprocess"]
-github: "https://github.com/yura7gi14/Day/tree/main/day1"
+github: "https://github.com/yura7gi14/Day/tree/main/day2"
 draft: false
 tags: ["Python", "ネットワーク", "ツール"]
 ---

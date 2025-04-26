@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/</link><description>Recent content on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Fri, 25 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>#100日チャレンジ da3</title><link>https://yura7gi14.github.io/my-portfolio/blog/day3/</link><pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day3/</guid><description>&lt;h1 id="day3-簡易ネットワークスキャナ">Day3 簡易ネットワークスキャナ&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/</link><description>Recent content on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sat, 26 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>#100日チャレンジ day4</title><link>https://yura7gi14.github.io/my-portfolio/blog/day4/</link><pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day4/</guid><description>&lt;h1 id="day4-tcpポートスキャナ">Day4 TCPポートスキャナ&lt;/h1>
+&lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
+これはDay4の記事です.&lt;br>
+指定したIPアドレスやドメインの指定した範囲のポートが開いているかをチェックするツールです.&lt;/p>
+&lt;p>使用した言語はPython. versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
+使用したのは&lt;code>socket&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>target &lt;span style="color:#f92672">=&lt;/span> input(&lt;span style="color:#e6db74">&amp;#34;target:&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port_target_start &lt;span style="color:#f92672">=&lt;/span> int(input(&lt;span style="color:#e6db74">&amp;#34;target port start:&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port_target_end &lt;span style="color:#f92672">=&lt;/span> int(input(&lt;span style="color:#e6db74">&amp;#34;target port finish:&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これでスキャンするIP addressとポート範囲を指定&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> port &lt;span style="color:#f92672">in&lt;/span> range(port_target_start, port_target_end &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sock &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>socket(socket&lt;span style="color:#f92672">.&lt;/span>AF_INET, socket&lt;span style="color:#f92672">.&lt;/span>SOCK_STREAM)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sock&lt;span style="color:#f92672">.&lt;/span>settimeout(&lt;span style="color:#ae81ff">0.5&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> sock&lt;span style="color:#f92672">.&lt;/span>connect_ex((target, port))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> result &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Port &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>port&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> is OPEN&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Port &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>port&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> is closed&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sock&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>TCP通信用のソケットを作成し、指定したIPアドレスとポートに接続を試みます.&lt;br>
+成功したら0を返し、失敗すればエラーコードを返す.&lt;br>
+それに応じたif elseで結果を表示.&lt;/p>
+&lt;p>応答の待ち時間の上限を設定している.&lt;/p></description></item><item><title>Day4 - TCPポートスキャナ</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day4/</link><pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day4/</guid><description>&lt;p>Python の &lt;code>socket&lt;/code> を使って、任意の宛先の任意の範囲のポートが開いているかを調べるツールを作成しました。&lt;/p>
+&lt;h3 id="使用技術">使用技術&lt;/h3>
+&lt;ul>
+&lt;li>Python 3.12&lt;/li>
+&lt;li>socket&lt;/li>
+&lt;/ul>
+&lt;h3 id="機能概要">機能概要&lt;/h3>
+&lt;ul>
+&lt;li>任意の宛先の任意の範囲のポートが開いているかを調べるツール&lt;/li>
+&lt;/ul>
+&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
+&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day4">Day4 - TCPポートスキャナ&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day3</title><link>https://yura7gi14.github.io/my-portfolio/blog/day3/</link><pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day3/</guid><description>&lt;h1 id="day3-簡易ネットワークスキャナ">Day3 簡易ネットワークスキャナ&lt;/h1>
 &lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
 これはDay3の記事です.&lt;br>
 Day2で作ったpingを送信するコードを弄り、複数のIPに対してPingを送信して生きてるIPを判定できるように.&lt;/p>
@@ -37,7 +72,7 @@ Day2で作ったpingを送信するコードを弄り、複数のIPに対してP
 &lt;li>任意の宛先範囲にPingを送信して疎通可能か判断するツール&lt;/li>
 &lt;/ul>
 &lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
-&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day3">Day2 - 簡易Pingツール&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day2</title><link>https://yura7gi14.github.io/my-portfolio/blog/day2/</link><pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day2/</guid><description>&lt;h1 id="day2-簡易pingツール">Day2 簡易Pingツール&lt;/h1>
+&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day3">Day3 - 簡易ネットワークスキャナ&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day2</title><link>https://yura7gi14.github.io/my-portfolio/blog/day2/</link><pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day2/</guid><description>&lt;h1 id="day2-簡易pingツール">Day2 簡易Pingツール&lt;/h1>
 &lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
 これはDay2の記事です.&lt;br>
 &lt;code>subprocess&lt;/code>を使用して任意の宛先にPingを送るツールを作りました。&lt;/p>

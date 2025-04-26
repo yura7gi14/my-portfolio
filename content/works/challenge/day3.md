@@ -19,5 +19,5 @@ Python の `subprocess` `ipaddress`モジュールを使って、任意の宛先
 - 任意の宛先範囲にPingを送信して疎通可能か判断するツール
 
 ### GitHubリポジトリ
-👉 [Day2 - 簡易Pingツール](https://github.com/yura7gi14/Day/tree/main/day3)
+👉 [Day3 - 簡易ネットワークスキャナ](https://github.com/yura7gi14/Day/tree/main/day3)
 

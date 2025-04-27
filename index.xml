@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/</link><description>Recent content on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sat, 26 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>#100日チャレンジ day4</title><link>https://yura7gi14.github.io/my-portfolio/blog/day4/</link><pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day4/</guid><description>&lt;h1 id="day4-tcpポートスキャナ">Day4 TCPポートスキャナ&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/</link><description>Recent content on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sun, 27 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>#100日チャレンジ day5</title><link>https://yura7gi14.github.io/my-portfolio/blog/day5/</link><pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day5/</guid><description>&lt;h1 id="day5-qrコード生成ツール">Day5 QRコード生成ツール&lt;/h1>
+&lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
+これはDay5の記事です.&lt;br>
+QRコードにしたいURLや文字列をQRコードにしてpng形式で保存するツールです.&lt;/p>
+&lt;p>使用した言語はPython. versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
+使用したライブラリは&lt;code>qrcode&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>data &lt;span style="color:#f92672">=&lt;/span> input(&lt;span style="color:#e6db74">&amp;#34;QRコードにしたい文字列またはURLを入力してください:&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ここでQRコードにしたい文字列やURLを入力します。&lt;br>
+空文字列だった場合はエラーとして終了します。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>img &lt;span style="color:#f92672">=&lt;/span> qrcode&lt;span style="color:#f92672">.&lt;/span>make(data)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>入力されたデータをもとに、QRコード画像を生成しています。&lt;br>
+&lt;code>qrcode.make()&lt;/code>はシンプルな使い方に適していて、これだけで十分なサイズ・誤り訂正レベルを自動で設定してくれます。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>filename &lt;span style="color:#f92672">=&lt;/span> input(&lt;span style="color:#e6db74">&amp;#34;保存するファイル名を入力してください:&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>生成したQRコード画像を保存するためのファイル名をユーザーから受け取ります。
+何も入力しなかった場合はデフォルトで&lt;code>&amp;quot;qr_code&amp;quot;&lt;/code>という名前で保存します。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>img&lt;span style="color:#f92672">.&lt;/span>save(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>filename&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">.png&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ファイル名に&lt;code>.png&lt;/code>をつけて、QRコード画像を保存しています。
+保存が完了すると、成功メッセージを表示します。&lt;/p></description></item><item><title>Day5 - QRコード生成ツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day5/</link><pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day5/</guid><description>&lt;p>Python の &lt;code>qrcode&lt;/code> を使って、QRコード化したいURLや文字列をQRコードにしてpng形式で保存するツールを作成しました。&lt;/p>
+&lt;h3 id="使用技術">使用技術&lt;/h3>
+&lt;ul>
+&lt;li>Python 3.12&lt;/li>
+&lt;li>qrcode&lt;/li>
+&lt;/ul>
+&lt;h3 id="機能概要">機能概要&lt;/h3>
+&lt;ul>
+&lt;li>QRコード化したいURLや文字列をQRコードにしてpng形式で保存するツール&lt;/li>
+&lt;/ul>
+&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
+&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day5">Day4 - TCPポートスキャナ&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day4</title><link>https://yura7gi14.github.io/my-portfolio/blog/day4/</link><pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day4/</guid><description>&lt;h1 id="day4-tcpポートスキャナ">Day4 TCPポートスキャナ&lt;/h1>
 &lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
 これはDay4の記事です.&lt;br>
 指定したIPアドレスやドメインの指定した範囲のポートが開いているかをチェックするツールです.&lt;/p>

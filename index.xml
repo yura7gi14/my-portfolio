@@ -1,4 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/</link><description>Recent content on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sun, 27 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>#100日チャレンジ day5</title><link>https://yura7gi14.github.io/my-portfolio/blog/day5/</link><pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day5/</guid><description>&lt;h1 id="day5-qrコード生成ツール">Day5 QRコード生成ツール&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/</link><description>Recent content on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 28 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>#100日チャレンジ day6</title><link>https://yura7gi14.github.io/my-portfolio/blog/day6/</link><pubDate>Mon, 28 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day6/</guid><description>&lt;h1 id="day6-ドメインip変換逆引きcsv保存ツール">Day6 ドメインIP変換＆逆引きCSV保存ツール&lt;/h1>
+&lt;p>&lt;code>#100日チャレンジ&lt;/code>を続けています。&lt;br>
+これはDay6の記事です。&lt;br>
+複数のドメインをIPアドレスに変換し、さらに逆引きホスト名も取得して、結果をCSVファイルに保存するツールを作成しました。&lt;/p>
+&lt;p>使用した言語はPython。versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
+使用したライブラリは標準ライブラリの&lt;code>socket&lt;/code>、&lt;code>csv&lt;/code>、&lt;code>sys&lt;/code>です。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>input_file &lt;span style="color:#f92672">=&lt;/span> sys&lt;span style="color:#f92672">.&lt;/span>argv[&lt;span style="color:#ae81ff">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>output_file &lt;span style="color:#f92672">=&lt;/span> sys&lt;span style="color:#f92672">.&lt;/span>argv[&lt;span style="color:#ae81ff">2&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>コマンドライン引数から、入力ファイル（ドメインリスト）と出力ファイル（CSV）のファイル名を受け取っています。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(input_file, &lt;span style="color:#e6db74">&amp;#34;r&amp;#34;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> domains &lt;span style="color:#f92672">=&lt;/span> f&lt;span style="color:#f92672">.&lt;/span>read()&lt;span style="color:#f92672">.&lt;/span>splitlines()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>入力ファイルを読み込み、1行ずつドメイン名としてリスト化しています。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> domain &lt;span style="color:#f92672">in&lt;/span> domains:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ip &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>gethostbyname(domain)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>gethostbyaddr(ip)[&lt;span style="color:#ae81ff">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">except&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>herror:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;-&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> results&lt;span style="color:#f92672">.&lt;/span>append([domain, ip, reverse, &lt;span style="color:#e6db74">&amp;#34;Success&amp;#34;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">except&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>gaierror:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> results&lt;span style="color:#f92672">.&lt;/span>append([domain, &lt;span style="color:#e6db74">&amp;#34;-&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Failed&amp;#34;&lt;/span>])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>各ドメインに対してIPアドレス取得を行い、成功すればさらに逆引きホスト名を取得します。&lt;br>
+エラー（存在しないドメインや逆引き失敗など）もきちんと例外処理して、失敗として記録しています。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(output_file, &lt;span style="color:#e6db74">&amp;#34;w&amp;#34;&lt;/span>, newline&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> writer &lt;span style="color:#f92672">=&lt;/span> csv&lt;span style="color:#f92672">.&lt;/span>writer(f)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> writer&lt;span style="color:#f92672">.&lt;/span>writerow([&lt;span style="color:#e6db74">&amp;#34;domain&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;ip_address&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;reverse_lookup&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;status&amp;#34;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> writer&lt;span style="color:#f92672">.&lt;/span>writerows(results)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>最終的に、変換結果をCSV形式で出力しています。
+カラムは「ドメイン名」「IPアドレス」「逆引きホスト名」「ステータス（成功/失敗）」です。&lt;/p></description></item><item><title>Day6 - ドメインIP変換＆逆引きCSV保存ツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day6/</link><pubDate>Mon, 28 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day6/</guid><description>&lt;p>Python の標準ライブラリ &lt;code>socket&lt;/code> と &lt;code>csv&lt;/code> を使って、&lt;br>
+複数ドメインをIPアドレスに変換し、逆引きホスト名も取得して、結果をCSVに保存するCLIツールを作成しました。&lt;/p>
+&lt;h3 id="使用技術">使用技術&lt;/h3>
+&lt;ul>
+&lt;li>Python 3.12&lt;/li>
+&lt;li>socket&lt;/li>
+&lt;li>csv&lt;/li>
+&lt;/ul>
+&lt;h3 id="機能概要">機能概要&lt;/h3>
+&lt;ul>
+&lt;li>入力ファイル（ドメインリスト）からドメイン名を読み込み&lt;/li>
+&lt;li>各ドメインについてIPアドレスを取得&lt;/li>
+&lt;li>IPアドレスから逆引きホスト名も取得&lt;/li>
+&lt;li>成功/失敗のステータスを付与&lt;/li>
+&lt;li>すべての結果をCSVファイルに保存&lt;/li>
+&lt;/ul>
+&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
+&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day6">Day6 - ドメインIP変換＆逆引きCSV保存ツール&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day5</title><link>https://yura7gi14.github.io/my-portfolio/blog/day5/</link><pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day5/</guid><description>&lt;h1 id="day5-qrコード生成ツール">Day5 QRコード生成ツール&lt;/h1>
 &lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
 これはDay5の記事です.&lt;br>
 QRコードにしたいURLや文字列をQRコードにしてpng形式で保存するツールです.&lt;/p>
@@ -26,7 +72,7 @@ QRコードにしたいURLや文字列をQRコードにしてpng形式で保存�
 &lt;li>QRコード化したいURLや文字列をQRコードにしてpng形式で保存するツール&lt;/li>
 &lt;/ul>
 &lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
-&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day5">Day4 - TCPポートスキャナ&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day4</title><link>https://yura7gi14.github.io/my-portfolio/blog/day4/</link><pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day4/</guid><description>&lt;h1 id="day4-tcpポートスキャナ">Day4 TCPポートスキャナ&lt;/h1>
+&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day5">Day5 - QRコード生成ツール&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day4</title><link>https://yura7gi14.github.io/my-portfolio/blog/day4/</link><pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day4/</guid><description>&lt;h1 id="day4-tcpポートスキャナ">Day4 TCPポートスキャナ&lt;/h1>
 &lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
 これはDay4の記事です.&lt;br>
 指定したIPアドレスやドメインの指定した範囲のポートが開いているかをチェックするツールです.&lt;/p>

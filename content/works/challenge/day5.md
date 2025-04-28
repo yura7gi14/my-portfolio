@@ -18,5 +18,5 @@ Python の `qrcode` を使って、QRコード化したいURLや文字列をQR�
 - QRコード化したいURLや文字列をQRコードにしてpng形式で保存するツール
 
 ### GitHubリポジトリ
-👉 [Day4 - TCPポートスキャナ](https://github.com/yura7gi14/Day/tree/main/day5)
+👉 [Day5 - QRコード生成ツール](https://github.com/yura7gi14/Day/tree/main/day5)
 

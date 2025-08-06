@@ -1,198 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/</link><description>Recent content on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 28 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>#100日チャレンジ day6</title><link>https://yura7gi14.github.io/my-portfolio/blog/day6/</link><pubDate>Mon, 28 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day6/</guid><description>&lt;h1 id="day6-ドメインip変換逆引きcsv保存ツール">Day6 ドメインIP変換＆逆引きCSV保存ツール&lt;/h1>
-&lt;p>&lt;code>#100日チャレンジ&lt;/code>を続けています。&lt;br>
-これはDay6の記事です。&lt;br>
-複数のドメインをIPアドレスに変換し、さらに逆引きホスト名も取得して、結果をCSVファイルに保存するツールを作成しました。&lt;/p>
-&lt;p>使用した言語はPython。versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
-使用したライブラリは標準ライブラリの&lt;code>socket&lt;/code>、&lt;code>csv&lt;/code>、&lt;code>sys&lt;/code>です。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>input_file &lt;span style="color:#f92672">=&lt;/span> sys&lt;span style="color:#f92672">.&lt;/span>argv[&lt;span style="color:#ae81ff">1&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>output_file &lt;span style="color:#f92672">=&lt;/span> sys&lt;span style="color:#f92672">.&lt;/span>argv[&lt;span style="color:#ae81ff">2&lt;/span>]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>コマンドライン引数から、入力ファイル（ドメインリスト）と出力ファイル（CSV）のファイル名を受け取っています。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(input_file, &lt;span style="color:#e6db74">&amp;#34;r&amp;#34;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> f:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> domains &lt;span style="color:#f92672">=&lt;/span> f&lt;span style="color:#f92672">.&lt;/span>read()&lt;span style="color:#f92672">.&lt;/span>splitlines()
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>入力ファイルを読み込み、1行ずつドメイン名としてリスト化しています。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> domain &lt;span style="color:#f92672">in&lt;/span> domains:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ip &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>gethostbyname(domain)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>gethostbyaddr(ip)[&lt;span style="color:#ae81ff">0&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">except&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>herror:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;-&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> results&lt;span style="color:#f92672">.&lt;/span>append([domain, ip, reverse, &lt;span style="color:#e6db74">&amp;#34;Success&amp;#34;&lt;/span>])
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">except&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>gaierror:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> results&lt;span style="color:#f92672">.&lt;/span>append([domain, &lt;span style="color:#e6db74">&amp;#34;-&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Failed&amp;#34;&lt;/span>])
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>各ドメインに対してIPアドレス取得を行い、成功すればさらに逆引きホスト名を取得します。&lt;br>
-エラー（存在しないドメインや逆引き失敗など）もきちんと例外処理して、失敗として記録しています。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(output_file, &lt;span style="color:#e6db74">&amp;#34;w&amp;#34;&lt;/span>, newline&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> f:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> writer &lt;span style="color:#f92672">=&lt;/span> csv&lt;span style="color:#f92672">.&lt;/span>writer(f)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> writer&lt;span style="color:#f92672">.&lt;/span>writerow([&lt;span style="color:#e6db74">&amp;#34;domain&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;ip_address&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;reverse_lookup&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;status&amp;#34;&lt;/span>])
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> writer&lt;span style="color:#f92672">.&lt;/span>writerows(results)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>最終的に、変換結果をCSV形式で出力しています。
-カラムは「ドメイン名」「IPアドレス」「逆引きホスト名」「ステータス（成功/失敗）」です。&lt;/p></description></item><item><title>Day6 - ドメインIP変換＆逆引きCSV保存ツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day6/</link><pubDate>Mon, 28 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day6/</guid><description>&lt;p>Python の標準ライブラリ &lt;code>socket&lt;/code> と &lt;code>csv&lt;/code> を使って、&lt;br>
-複数ドメインをIPアドレスに変換し、逆引きホスト名も取得して、結果をCSVに保存するCLIツールを作成しました。&lt;/p>
-&lt;h3 id="使用技術">使用技術&lt;/h3>
-&lt;ul>
-&lt;li>Python 3.12&lt;/li>
-&lt;li>socket&lt;/li>
-&lt;li>csv&lt;/li>
-&lt;/ul>
-&lt;h3 id="機能概要">機能概要&lt;/h3>
-&lt;ul>
-&lt;li>入力ファイル（ドメインリスト）からドメイン名を読み込み&lt;/li>
-&lt;li>各ドメインについてIPアドレスを取得&lt;/li>
-&lt;li>IPアドレスから逆引きホスト名も取得&lt;/li>
-&lt;li>成功/失敗のステータスを付与&lt;/li>
-&lt;li>すべての結果をCSVファイルに保存&lt;/li>
-&lt;/ul>
-&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
-&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day6">Day6 - ドメインIP変換＆逆引きCSV保存ツール&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day5</title><link>https://yura7gi14.github.io/my-portfolio/blog/day5/</link><pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day5/</guid><description>&lt;h1 id="day5-qrコード生成ツール">Day5 QRコード生成ツール&lt;/h1>
-&lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
-これはDay5の記事です.&lt;br>
-QRコードにしたいURLや文字列をQRコードにしてpng形式で保存するツールです.&lt;/p>
-&lt;p>使用した言語はPython. versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
-使用したライブラリは&lt;code>qrcode&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>data &lt;span style="color:#f92672">=&lt;/span> input(&lt;span style="color:#e6db74">&amp;#34;QRコードにしたい文字列またはURLを入力してください:&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ここでQRコードにしたい文字列やURLを入力します。&lt;br>
-空文字列だった場合はエラーとして終了します。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>img &lt;span style="color:#f92672">=&lt;/span> qrcode&lt;span style="color:#f92672">.&lt;/span>make(data)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>入力されたデータをもとに、QRコード画像を生成しています。&lt;br>
-&lt;code>qrcode.make()&lt;/code>はシンプルな使い方に適していて、これだけで十分なサイズ・誤り訂正レベルを自動で設定してくれます。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>filename &lt;span style="color:#f92672">=&lt;/span> input(&lt;span style="color:#e6db74">&amp;#34;保存するファイル名を入力してください:&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>生成したQRコード画像を保存するためのファイル名をユーザーから受け取ります。
-何も入力しなかった場合はデフォルトで&lt;code>&amp;quot;qr_code&amp;quot;&lt;/code>という名前で保存します。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>img&lt;span style="color:#f92672">.&lt;/span>save(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>filename&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">.png&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ファイル名に&lt;code>.png&lt;/code>をつけて、QRコード画像を保存しています。
-保存が完了すると、成功メッセージを表示します。&lt;/p></description></item><item><title>Day5 - QRコード生成ツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day5/</link><pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day5/</guid><description>&lt;p>Python の &lt;code>qrcode&lt;/code> を使って、QRコード化したいURLや文字列をQRコードにしてpng形式で保存するツールを作成しました。&lt;/p>
-&lt;h3 id="使用技術">使用技術&lt;/h3>
-&lt;ul>
-&lt;li>Python 3.12&lt;/li>
-&lt;li>qrcode&lt;/li>
-&lt;/ul>
-&lt;h3 id="機能概要">機能概要&lt;/h3>
-&lt;ul>
-&lt;li>QRコード化したいURLや文字列をQRコードにしてpng形式で保存するツール&lt;/li>
-&lt;/ul>
-&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
-&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day5">Day5 - QRコード生成ツール&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day4</title><link>https://yura7gi14.github.io/my-portfolio/blog/day4/</link><pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day4/</guid><description>&lt;h1 id="day4-tcpポートスキャナ">Day4 TCPポートスキャナ&lt;/h1>
-&lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
-これはDay4の記事です.&lt;br>
-指定したIPアドレスやドメインの指定した範囲のポートが開いているかをチェックするツールです.&lt;/p>
-&lt;p>使用した言語はPython. versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
-使用したのは&lt;code>socket&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>target &lt;span style="color:#f92672">=&lt;/span> input(&lt;span style="color:#e6db74">&amp;#34;target:&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port_target_start &lt;span style="color:#f92672">=&lt;/span> int(input(&lt;span style="color:#e6db74">&amp;#34;target port start:&amp;#34;&lt;/span>))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port_target_end &lt;span style="color:#f92672">=&lt;/span> int(input(&lt;span style="color:#e6db74">&amp;#34;target port finish:&amp;#34;&lt;/span>))
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これでスキャンするIP addressとポート範囲を指定&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> port &lt;span style="color:#f92672">in&lt;/span> range(port_target_start, port_target_end &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sock &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>socket(socket&lt;span style="color:#f92672">.&lt;/span>AF_INET, socket&lt;span style="color:#f92672">.&lt;/span>SOCK_STREAM)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sock&lt;span style="color:#f92672">.&lt;/span>settimeout(&lt;span style="color:#ae81ff">0.5&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> sock&lt;span style="color:#f92672">.&lt;/span>connect_ex((target, port))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> result &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Port &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>port&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> is OPEN&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Port &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>port&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> is closed&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sock&lt;span style="color:#f92672">.&lt;/span>close()
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>TCP通信用のソケットを作成し、指定したIPアドレスとポートに接続を試みます.&lt;br>
-成功したら0を返し、失敗すればエラーコードを返す.&lt;br>
-それに応じたif elseで結果を表示.&lt;/p>
-&lt;p>応答の待ち時間の上限を設定している.&lt;/p></description></item><item><title>Day4 - TCPポートスキャナ</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day4/</link><pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day4/</guid><description>&lt;p>Python の &lt;code>socket&lt;/code> を使って、任意の宛先の任意の範囲のポートが開いているかを調べるツールを作成しました。&lt;/p>
-&lt;h3 id="使用技術">使用技術&lt;/h3>
-&lt;ul>
-&lt;li>Python 3.12&lt;/li>
-&lt;li>socket&lt;/li>
-&lt;/ul>
-&lt;h3 id="機能概要">機能概要&lt;/h3>
-&lt;ul>
-&lt;li>任意の宛先の任意の範囲のポートが開いているかを調べるツール&lt;/li>
-&lt;/ul>
-&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
-&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day4">Day4 - TCPポートスキャナ&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day3</title><link>https://yura7gi14.github.io/my-portfolio/blog/day3/</link><pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day3/</guid><description>&lt;h1 id="day3-簡易ネットワークスキャナ">Day3 簡易ネットワークスキャナ&lt;/h1>
-&lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
-これはDay3の記事です.&lt;br>
-Day2で作ったpingを送信するコードを弄り、複数のIPに対してPingを送信して生きてるIPを判定できるように.&lt;/p>
-&lt;p>使用した言語はPython. versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
-使用したのは&lt;code>subprocess&lt;/code>, &lt;code>ipaddress&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>ip_addr &lt;span style="color:#f92672">=&lt;/span> input(&lt;span style="color:#e6db74">&amp;#34;ip address:&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>net &lt;span style="color:#f92672">=&lt;/span> ipaddress&lt;span style="color:#f92672">.&lt;/span>ip_network(ip_addr)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ips &lt;span style="color:#f92672">=&lt;/span> [str(ip) &lt;span style="color:#66d9ef">for&lt;/span> ip &lt;span style="color:#f92672">in&lt;/span> net&lt;span style="color:#f92672">.&lt;/span>hosts()]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これで送信するIP addressを指定&lt;br>
-宛先のip addressはCLI上で指定可能&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> ip &lt;span style="color:#f92672">in&lt;/span> ips:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>ip&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">にping中...&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> response &lt;span style="color:#f92672">=&lt;/span> subprocess&lt;span style="color:#f92672">.&lt;/span>run(
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#e6db74">&amp;#34;ping&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-c&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-W&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span>, ip],
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> capture_output&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> text&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> response&lt;span style="color:#f92672">.&lt;/span>returncode &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>ip&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">は生存している&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>ip&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">は応答なし&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これでpingの送信が行われる&lt;br>
-送信されれば&lt;code>生存している&lt;/code>, 送信されなければ&lt;code>応答なし&lt;/code>と表示&lt;/p>
-&lt;p>&lt;code>subprocess.run&lt;/code>で外部コマンドを呼べる.&lt;br>
-&lt;code>ping&lt;/code>のところでなんのコマンドを実行するのかを定義.&lt;code>-c&lt;/code>などはpingで使われるオプションを指定している.&lt;/p></description></item><item><title>Day3 - 簡易ネットワークスキャナ</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day3/</link><pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day3/</guid><description>&lt;p>Python の &lt;code>subprocess&lt;/code> &lt;code>ipaddress&lt;/code>モジュールを使って、任意の宛先範囲にPingを送信して疎通可能か判断するツールを作成しました。&lt;/p>
-&lt;h3 id="使用技術">使用技術&lt;/h3>
-&lt;ul>
-&lt;li>Python 3.12&lt;/li>
-&lt;li>subprcessモジュール&lt;/li>
-&lt;li>ipaddressモジュール&lt;/li>
-&lt;/ul>
-&lt;h3 id="機能概要">機能概要&lt;/h3>
-&lt;ul>
-&lt;li>任意の宛先範囲にPingを送信して疎通可能か判断するツール&lt;/li>
-&lt;/ul>
-&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
-&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day3">Day3 - 簡易ネットワークスキャナ&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day2</title><link>https://yura7gi14.github.io/my-portfolio/blog/day2/</link><pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day2/</guid><description>&lt;h1 id="day2-簡易pingツール">Day2 簡易Pingツール&lt;/h1>
-&lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
-これはDay2の記事です.&lt;br>
-&lt;code>subprocess&lt;/code>を使用して任意の宛先にPingを送るツールを作りました。&lt;/p>
-&lt;p>使用した言語はPython. versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
-使用したのは&lt;code>subprocess&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>target &lt;span style="color:#f92672">=&lt;/span> input()
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これで宛先を取得&lt;br>
-(例: google.com, 1.1.1.1)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>response &lt;span style="color:#f92672">=&lt;/span> subprocess&lt;span style="color:#f92672">.&lt;/span>run([&lt;span style="color:#e6db74">&amp;#34;ping&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-c&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span>, target], capture_output&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>, text&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これでpingの送信が行われる&lt;/p>
-&lt;p>&lt;code>subprocess.run&lt;/code>で外部コマンドを呼べる.&lt;br>
-&lt;code>ping&lt;/code>のところでなんのコマンドを実行するのかを定義.&lt;code>-c&lt;/code>などはpingで使われるオプションを指定している.&lt;/p></description></item><item><title>Day2 - 簡易Pingツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day2/</link><pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day2/</guid><description>&lt;p>Python の &lt;code>subprocess&lt;/code> モジュールを使って、任意の宛先にPingを送信するツールを作成しました。&lt;/p>
-&lt;h3 id="使用技術">使用技術&lt;/h3>
-&lt;ul>
-&lt;li>Python 3.12&lt;/li>
-&lt;li>subprcessモジュール&lt;/li>
-&lt;/ul>
-&lt;h3 id="機能概要">機能概要&lt;/h3>
-&lt;ul>
-&lt;li>任意の宛先にPingを送信する&lt;/li>
-&lt;/ul>
-&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
-&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day2">Day2 - 簡易Pingツール&lt;/a>&lt;/p></description></item><item><title>#100日チャレンジ day1</title><link>https://yura7gi14.github.io/my-portfolio/blog/day1/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/blog/day1/</guid><description>&lt;h1 id="day1-ip情報の表示ツール">Day1 IP情報の表示ツール&lt;/h1>
-&lt;p>&lt;code>#100日チャレンジ&lt;/code>を始めてみました.&lt;br>
-これはDay1の記事です.&lt;br>
-実行環境のホスト名とIPアドレスを表示させるツールを開発しました.&lt;/p>
-&lt;p>使用した言語はPython. versionは&lt;code>Python 3.12.3&lt;/code>&lt;br>
-モジュールとしてsocketを使用している.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>hostname &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>gethostname()
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これでホスト名を取得し,&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>ip_address &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>gethostbyname(hostname)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>これでIP情報を取得.&lt;/p>
-&lt;p>&lt;code>gethostname&lt;/code>でシステムの標準のホスト名を取得.&lt;br>
-&lt;code>gethostbyname&lt;/code>でインターネットに出るためのルータに接続しているインターフェースのローカルIPアドレスを取得.&lt;/p></description></item><item><title>Day1 - IP情報の表示ツール</title><link>https://yura7gi14.github.io/my-portfolio/works/challenge/day1/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/works/challenge/day1/</guid><description>&lt;p>Python の &lt;code>socket&lt;/code> モジュールを使って、ホスト名とローカルIPアドレスを表示するツールを作成しました。&lt;/p>
-&lt;h3 id="使用技術">使用技術&lt;/h3>
-&lt;ul>
-&lt;li>Python 3.12&lt;/li>
-&lt;li>socketモジュール&lt;/li>
-&lt;/ul>
-&lt;h3 id="機能概要">機能概要&lt;/h3>
-&lt;ul>
-&lt;li>ホスト名の取得&lt;/li>
-&lt;li>ローカルIPアドレスの取得&lt;/li>
-&lt;/ul>
-&lt;h3 id="githubリポジトリ">GitHubリポジトリ&lt;/h3>
-&lt;p>👉 &lt;a href="https://github.com/yura7gi14/Day/tree/main/day1">Day1 - IP情報の表示ツール&lt;/a>&lt;/p></description></item><item><title>お問い合わせ</title><link>https://yura7gi14.github.io/my-portfolio/contact/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/contact/</guid><description>&lt;h2 id="お問い合わせ">お問い合わせ&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yuragi.dev</title><link>https://yura7gi14.github.io/my-portfolio/</link><description>Recent content on yuragi.dev</description><generator>Hugo</generator><language>ja</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Wed, 23 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://yura7gi14.github.io/my-portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>お問い合わせ</title><link>https://yura7gi14.github.io/my-portfolio/contact/</link><pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate><guid>https://yura7gi14.github.io/my-portfolio/contact/</guid><description>&lt;h2 id="お問い合わせ">お問い合わせ&lt;/h2>
 &lt;p>ご意見・ご感想・お仕事のご相談などありましたら、以下からお気軽にご連絡ください。&lt;/p>
 &lt;ul>
 &lt;li>🐦 Twitter: &lt;a href="https://twitter.com/less71__">@less71__&lt;/a>&lt;/li>
@@ -206,20 +12,20 @@ Day2で作ったpingを送信するコードを弄り、複数のIPに対してP
 &lt;li>&lt;strong>Qiita&lt;/strong>: &lt;a href="https://qiita.com/yura7gi14">yura7gi14&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="-所属">🎓 所属&lt;/h2>
+&lt;h2 id="所属">所属&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;strong>2021年4月 – 2025年3月&lt;/strong>&lt;br>
 大阪工業大学 情報科学部 ネットワークデザイン学科&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;strong>2025年4月 – （予定）&lt;/strong>&lt;br>
+&lt;p>&lt;strong>2025年4月 –&lt;/strong>&lt;br>
 豊橋技術科学大学大学院 工学研究科&lt;br>
 情報・知能工学専攻 修士課程（分散システム研究室）&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="-活動コミュニティ">💻 活動・コミュニティ&lt;/h2>
+&lt;h2 id="活動コミュニティ">活動・コミュニティ&lt;/h2>
 &lt;h3 id="-ネットワーク運用--nog-活動">■ ネットワーク運用 / NOG 活動&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>2023年10月〜&lt;/strong>: NaniwaNOG&lt;br>
@@ -239,8 +45,12 @@ Day2で作ったpingを送信するコードを弄り、複数のIPに対してP
 └ NOC Member（AP チーム、Meraki 担当）&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="-コンテスト大会">🧠 コンテスト・大会&lt;/h2>
+&lt;h2 id="コンテスト大会">コンテスト・大会&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;strong>2023年10月&lt;/strong>: CSS併設 MWS Cup&lt;br>
-└ チーム「SakanaCushion」として出場、&lt;strong>表層データ分析担当&lt;/strong>&lt;/p></description></item></channel></rss>
+└ チーム「SakanaCushion」として出場、&lt;strong>表層データ分析担当&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>2023年11月&lt;/strong>: ISUCON13&lt;br>
+└ チーム「ぐるぐるdocker〜ん」として参加&lt;/p></description></item></channel></rss>

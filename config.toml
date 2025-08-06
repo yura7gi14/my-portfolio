@@ -81,12 +81,6 @@ theme        = "hello-friend-ng"
   weight     = 2
 
   [[languages.ja.menu.main]]
-  identifier = "3makes"
-  name       = "Projects"
-  url        = "/works/"
-  weight     = 3
-
-  [[languages.ja.menu.main]]
   identifier = "4contact"
   name       = "Contact"
   url        = "/contact/"

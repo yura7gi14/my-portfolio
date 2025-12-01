@@ -32,6 +32,8 @@
   └ Level2の問題作成を担当
 - **2023年7月・2024年1月**: JANOG52・53 若者支援参加
 
+- **2026年2月**: JANOG57 NOC Member (AP)
+
 ### ■ 大学ICT推進協議会（AXIES）
 - **2024年12月**: AXIES 2024  
   └ NOC Member（AP チーム、Meraki 担当）
